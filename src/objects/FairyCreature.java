@@ -49,9 +49,8 @@ public class FairyCreature extends Hero implements Flyable {
         return "стал принюхиваться";
     }
 
-    public String like() {
-        return this.getName() + "оодобрил";
-    }
+    public String nightAdventures(){return " после ночных приключений c";};
+
 
     @Override
     public void setLocation(Location location) {

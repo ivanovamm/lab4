@@ -5,29 +5,33 @@ import exceptions.FoodIsNotReadyException;
 public class Food {
     private String name;
     public int isready;
-    public Food(String name, int isready){
+    public int quality;
+
+    public Food(String name, int isready, int quality) {
         this.name = name;
         this.isready = isready;
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-     public static class Pudding{
-         public String name;
-         public String flavour;
 
-        public Pudding( String flavour, String name){
+    public static class Pudding {
+        public String name;
+        public String flavour;
+
+        public Pudding(String flavour, String name) {
             this.flavour = flavour;
             this.name = name;
         }
     }
-     public void ready(int isready) throws FoodIsNotReadyException {
-        this.isready = isready;
-        if (isready<100){
-            throw new FoodIsNotReadyException("блюдо " + name+" не готово");
-        }
-     }
 
+    public void ready(int isready) throws FoodIsNotReadyException {
+        this.isready = isready;
+        if (isready < 100) {
+            throw new FoodIsNotReadyException("блюдо " + name + " не готово");
+        }
+    }
 
 
 }

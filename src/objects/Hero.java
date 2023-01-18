@@ -76,12 +76,16 @@ public abstract class Hero implements Movable {
     }
 
     public String sing(int volume, String what) {
-        if (volume > 90) {
-            return "пела громко" + what;
-        } else if (volume > 10) {
-            return "пела тихо" + what;
-        } else {
-            return "пела" + what;
+        if (name.equals("Фрекенбок ") ){
+            if (volume > 90) {
+                return "пела громко" + what;
+            }else if (volume > 10) {
+                return "пела тихо" + what;
+            } else {
+                return "пела" + what;
+            }
+        }else{
+            throw new WrongName("это не Фрекенбок!!");
         }
     }
 
@@ -101,7 +105,7 @@ public abstract class Hero implements Movable {
         return "подумал " + what;
     }
 
-    public String getattached(Hero who) {
+    public String getAttached(Hero who) {
         return "привязался к " + who.getName();
     }
 
@@ -120,20 +124,20 @@ public abstract class Hero implements Movable {
         return ((Hero) obj).name.equals(name);
     }
 
-    public String purpose(String purposeе, Hero who) {
-        if (who.name.equals("Карлсон ")) {
-            return " из-за ночных приключений с ";
-        } else {
-            throw new WrongName("это не карлсон!!");
-        }
-    }
-
     public String sigh() {
         return " вздохнула";
     }
 
     public String call(String who) {
         return "позвонил" + who;
+    }
+
+    public String like(int quality) {
+        if (quality >= 100) {
+            return "оценил еду";
+        } else {
+            return "не оценил еду";
+        }
     }
 
 
